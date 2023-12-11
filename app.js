@@ -11,6 +11,8 @@ const appGet = (rute, fileName) => app.get(`${rute}`, (req, res) => {
     res.sendFile(pathJoin(fileName))
 });
 
+app.use(express.static('public'));
+
 appGet('/','index');
 appGet('/babbage', 'babbage');
 appGet('/berners-lee', 'berners-lee');
